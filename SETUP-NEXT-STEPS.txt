@@ -1,0 +1,44 @@
+LUMEN — CURRENT SETUP STATUS AND NEXT STEPS
+
+ALREADY COMPLETED
+- Supabase project `lumen` has been created in the Asia South (Mumbai) region.
+- The Lumen database schema and migrations (lumen_schema.sql, phase3.sql, phase5.sql, phase6.sql) have been applied successfully.
+- Database tables and Row Level Security are enabled.
+- Supabase security hardening was applied to views, function search paths, and trigger-only function permissions.
+- Vercel project `lumen` has been created.
+- Vercel project environment variables NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY are configured for Production, Preview, and Development.
+- Vercel is configured for Node.js 22.x and Next.js.
+
+PROJECT DETAILS
+Supabase project URL: https://uvecnxvfxhxeqolqbyqr.supabase.co
+Supabase project reference: uvecnxvfxhxeqolqbyqr
+Vercel project name: lumen
+
+WHAT IS NOT DONE YET
+- The source code has not been connected to a Git repository or uploaded to Vercel.
+- No Vercel deployment/live website exists yet.
+- A production build has not been verified. An npm install attempt timed out in the current environment.
+- This is a responsive web app source project, not an Android APK.
+
+NEXT STEPS TO PUBLISH
+1. Extract this ZIP. Open the `lumen` folder; upload the CONTENTS of that folder to a new PRIVATE GitHub repository named `lumen`.
+2. Open the existing `lumen` project in Vercel. Go to Settings > Git and connect that GitHub repository.
+3. Confirm the project root is the repository root. Install command: `npm install`. Build command: `npm run build`.
+4. Deploy from Vercel. Check the build logs if it fails; do not invite users until signup, login, uploads, posts, Reels, follows, DMs, and moderation are tested.
+5. After Vercel gives you a deployment domain, open Supabase > Authentication > URL Configuration. Set Site URL to that domain and add the domain to Redirect URLs.
+6. Create your own account in Lumen. To make it an admin, run this SQL in Supabase SQL Editor, replacing your username:
+   update profiles set role = 'admin' where username = 'yourusername';
+   Then open /admin on the deployed site.
+
+LOCAL DEVELOPMENT
+1. Copy `.env.example` to `.env.local`.
+2. Set NEXT_PUBLIC_SUPABASE_URL to the Supabase project URL above.
+3. Set NEXT_PUBLIC_SUPABASE_ANON_KEY to the project's publishable/anon key from Supabase API settings.
+4. Run: npm install
+5. Run: npm run dev
+
+SECURITY NOTES
+- Never put a Supabase service_role/secret key in a NEXT_PUBLIC_ variable or client-side code.
+- Never share account passwords or secret API keys in chat.
+- The app's media buckets include public-read avatars/media. Review privacy and access rules before public launch.
+- DM image storage and moderation need real-world testing before inviting users.

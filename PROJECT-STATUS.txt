@@ -1,0 +1,9 @@
+LUMEN PROJECT STATUS
+
+Supabase: CREATED; database schema + phase3 + phase5 + phase6 migrations applied.
+Supabase URL: https://uvecnxvfxhxeqolqbyqr.supabase.co
+Supabase ref: uvecnxvfxhxeqolqbyqr
+Vercel: PROJECT CREATED; environment variables configured; Node.js 22.x selected.
+Deployment: NOT YET DEPLOYED — source repository connection is still required.
+Build: NOT VERIFIED — npm install timed out in this environment.
+Android APK: NOT INCLUDED — this is a Next.js web app.

@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Lumen — warm editorial luxury */
+:root {
+  color-scheme: light;
+  --bg: #F7F5F0;
+  --surface: #FFFEFC;
+  --ink: #191916;
+  --mute: #77756D;
+  --line: #E8E3D9;
+  --glow: #C6A56B;
+  --glow-ink: #17130C;
+}
+:root[data-theme=dark] {
+  color-scheme: dark;
+  --bg: #11110F;
+  --surface: #1B1A17;
+  --ink: #F4F0E8;
+  --mute: #AAA397;
+  --line: #343129;
+  --glow: #D2B47C;
+  --glow-ink: #17130C;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme=light]) {
+    color-scheme: dark;
+    --bg: #11110F;
+    --surface: #1B1A17;
+    --ink: #F4F0E8;
+    --mute: #AAA397;
+    --line: #343129;
+    --glow: #D2B47C;
+    --glow-ink: #17130C;
+  }
+}
+* { -webkit-tap-highlight-color: transparent; }
+html { background: var(--bg); scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body), system-ui, sans-serif;
+  letter-spacing: -0.012em;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: color-mix(in srgb, var(--glow) 35%, transparent); color: var(--ink); }
+.btn { @apply inline-flex items-center justify-center rounded-full px-5 py-2.5 text-sm font-semibold transition active:scale-95 disabled:opacity-50; }
+.btn-glow { @apply btn bg-glow text-glow-ink; box-shadow: 0 5px 18px color-mix(in srgb, var(--glow) 20%, transparent); }
+.btn-ghost { @apply btn border border-line text-ink; background: var(--surface); }
+.field { @apply w-full rounded-xl2 border border-line bg-surface px-4 py-3 text-sm outline-none transition; }
+.field:focus { border-color: var(--glow); box-shadow: 0 0 0 3px color-mix(in srgb, var(--glow) 18%, transparent); }
+:focus-visible { outline: 2px solid var(--glow); outline-offset: 3px; }
+img, video { -webkit-user-drag: none; }
+.lumen-card { background: var(--surface); border: 1px solid var(--line); border-radius: 1.25rem; }
+.lumen-muted { color: var(--mute); }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto !important; transition: none !important; animation: none !important; } }
